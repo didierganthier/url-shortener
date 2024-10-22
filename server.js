@@ -46,17 +46,6 @@ app.post('/api/shorturl', (req, res) => {
     })
 })
 
-app.get('/api/shorturl/:short_url', (req, res) => {
-    const shortUrl = req.params.short_url;
-    const originalUrl = urlDatabase[shortUrl];
-  
-    if (originalUrl) {
-      res.redirect(originalUrl);
-    } else {
-      res.status(404).json({ error: 'No short URL found for the given input' });
-    }
-  });
-  
 
 app.listen(PORT, () => {
     console.log(`Sèvè a ap fonksyone la sou pò ${PORT}`)
